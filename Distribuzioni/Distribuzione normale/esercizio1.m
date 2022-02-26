@@ -5,16 +5,13 @@ end
 function main
     settings;
     p=0.3015;
-    f=@(x)normpdf(x);
-    p_1=integral(f,-inf,inf);
-    k=norminv(p_1-p);
-    fprintf("a) k=%s\n",num2str(k));
-
+    k_area=1-p;
+    fprintf("k_A=%s\n",num2str(norminv(k_area)));
     p=0.4167;
-    z_2=-0.18;
-    p_1=integral(f,-inf,z_2);
-    k=norminv(p_1-p);
-    fprintf("b) k=%s\n",num2str(k));
+    z_max=-0.18;
+    p_min=normcdf(z_max);
+    k_area=p_min-p;
+    fprintf("k_B=%s\n",num2str(norminv(k_area)));
 end
 
 function settings
@@ -23,4 +20,3 @@ function settings
     commandwindow;
     clc;
 end
-

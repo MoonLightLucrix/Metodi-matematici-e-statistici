@@ -6,9 +6,7 @@ function main
     settings;
     alpha=0.01;
     beta=2;
-    f=@(x)wblpdf(x,alpha,beta);
-    p=integral(f,0,8);
-    disp(p);
+    fprintf("P(X≤8)=%s%%\n",num2str(wblcdf(8,alpha,beta)*100,3));
 end
 
 function settings
@@ -17,4 +15,3 @@ function settings
     commandwindow;
     clc;
 end
-

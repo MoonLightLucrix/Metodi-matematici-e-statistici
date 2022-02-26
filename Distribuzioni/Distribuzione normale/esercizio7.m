@@ -7,8 +7,7 @@ function main
     mu=3.0;
     sigma=0.005;
     f=@(x)normpdf(x,mu,sigma);
-    p=integral(f,(3.00-0.01),(3.00+0.01));
-    fprintf("In media, i cuscinetti scartati saranno %s%%\n",num2str((1-p)*100,3));
+    fprintf("1-P(%s<X<%s)=%s%%\n",num2str(3.00-0.01),num2str(3.00+0.01),num2str((integral(f,-inf,3.00-1)+(integral(f,3.00+1,inf)))*100,3));
 end
 
 function settings

@@ -5,7 +5,7 @@ end
 function main
     settings;
     p=0.05;
-    fprintf("La probabilità che siano necessari 5 tentativi prima di trovare una linea libera è %s%%\n",num2str(geopdf(5,p)*100,3));
+    fprintf("P=%s%%\n",num2str(geopdf(6,p)*100,3));
 end
 
 function settings

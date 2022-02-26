@@ -5,14 +5,8 @@ end
 function main
     settings;
     mu=5;
-    f=@(x)exppdf(x,mu);
-    p=integral(f,0,8);
-    disp(p);
-    b=0.0;
-    for i=2:5
-        b=b+(binopdf(i,5,p));
-    end
-    disp(b);
+    p=1-expcdf(8,mu);
+    fprintf("P=%s%%\n",num2str(binopdf(2,5,p)*100,3));
 end
 
 function settings

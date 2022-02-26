@@ -7,8 +7,7 @@ function main
     mu=300;
     sigma=50;
     f=@(x)normpdf(x,mu,sigma);
-    p=integral(f,362,inf);
-    fprintf("P(X>362)=%s\n",num2str(p));
+    fprintf("P(X>32)=%s\n",num2str(integral(f,32,inf)));
 end
 
 function settings

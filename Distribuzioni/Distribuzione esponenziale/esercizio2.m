@@ -5,11 +5,9 @@ end
 function main
     settings;
     mu=4;
-    f=@(x)exppdf(x,mu);
-    p=1-integral(f,6,inf);
-    disp(p);
-    p=integral(f,0,1);
-    disp(p);
+    p=1-expcdf(6,mu);
+    fprintf("P(Y>6)=%s%%\nP(X<1)=%s%%\n",num2str(p*100,4),num2str(expcdf(1,mu)*100,4));
+
 end
 
 function settings

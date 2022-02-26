@@ -6,9 +6,7 @@ function main
     settings;
     mu=800;
     sigma=40;
-    f=@(x)normpdf(x,sigma,mu);
-    p=integral(f,778,834);
-    fprintf("La probabilità che una lampadina duri dalle 778 alle 834 ore è %s%%\n",num2str(p*100,3));
+    fprintf("P(778<X<834)=%s%%\n",num2str((normcdf(834,mu,sigma)-normcdf(772,mu,sigma))*100,3));
 end
 
 function settings
